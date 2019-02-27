@@ -33,7 +33,7 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
     AdminProductsComponent,
     AdminOrdersComponent,
     LoginComponent,
-    ProductFormComponent
+    ProductFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +54,13 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
       { path: 'admin/products/new', component:ProductFormComponent },
     ])
   ],
-  providers: [],
+  providers: [
+    // AuthService,
+    // AuthGuard,
+    // AdminAuthGuard,
+    // UserService,
+    // CategoryService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
