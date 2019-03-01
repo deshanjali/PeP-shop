@@ -1,3 +1,4 @@
+import { AuthService } from './auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
@@ -55,7 +56,7 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
     ])
   ],
   providers: [
-    // AuthService,
+     AuthService
     // AuthGuard,
     // AdminAuthGuard,
     // UserService,
