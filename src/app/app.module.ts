@@ -1,3 +1,4 @@
+import { AdminAuthGuard } from './admin-auth-guard.service';
 import { UserService } from './user.service';
 import { AuthGuard } from './auth-guard.service';
 import { AuthService } from './auth.service';
@@ -62,7 +63,7 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
   providers: [
      AuthService,
      AuthGuard,
-    // AdminAuthGuard,
+     AdminAuthGuard,
      UserService
     // CategoryService
   ],
