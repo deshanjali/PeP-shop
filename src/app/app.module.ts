@@ -1,3 +1,4 @@
+import { UserService } from './user.service';
 import { AuthGuard } from './auth-guard.service';
 import { AuthService } from './auth.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -60,9 +61,9 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
   ],
   providers: [
      AuthService,
-     AuthGuard
+     AuthGuard,
     // AdminAuthGuard,
-    // UserService,
+     UserService
     // CategoryService
   ],
   bootstrap: [AppComponent]
