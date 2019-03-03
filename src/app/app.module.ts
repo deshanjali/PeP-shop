@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth-guard.service';
 import { AuthService } from './auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -45,19 +46,21 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
     RouterModule.forRoot([
       { path: '', component:HomeComponent },
       { path: 'products', component:ProductsComponent },
-      { path: 'check-out', component:CheckOutComponent },
-      { path: 'shopping-cart', component:ShoppingCartComponent },
-      { path: 'my/orders' , component:MyOrdersComponent},
-      { path: 'order-success', component:OrderSuccessComponent },
       { path: 'login', component:LoginComponent },
-      { path: 'admin/orders', component:AdminOrdersComponent },
-      { path: 'admin/products', component:AdminProductsComponent },
+      { path: 'shopping-cart', component:ShoppingCartComponent },
+
+      { path: 'check-out', component:CheckOutComponent, canActivate: [AuthGuard] },
+      { path: 'my/orders' , component:MyOrdersComponent, canActivate: [AuthGuard] },
+      { path: 'order-success', component:OrderSuccessComponent, canActivate: [AuthGuard] },
+      
+      { path: 'admin/orders', component:AdminOrdersComponent, canActivate: [AuthGuard] },
+      { path: 'admin/products', component:AdminProductsComponent, canActivate: [AuthGuard] },
       { path: 'admin/products/new', component:ProductFormComponent },
     ])
   ],
   providers: [
-     AuthService
-    // AuthGuard,
+     AuthService,
+     AuthGuard
     // AdminAuthGuard,
     // UserService,
     // CategoryService
